@@ -5,13 +5,13 @@
 
 <body>
 
-<h2>Veterinarians</h2>
+<h2>Veterinarios</h2>
 
 <table id="vets" class="table table-striped">
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Specialties</th>
+    <th>Nombre</th>
+    <th>Especialidad</th>
   </tr>
   </thead>
   <tbody>
@@ -19,13 +19,13 @@
     <td th:text="${vet.firstName + ' ' + vet.lastName}"></td>
     <td><span th:each="specialty : ${vet.specialties}"
               th:text="${specialty.name + ' '}"/> <span
-      th:if="${vet.nrOfSpecialties == 0}">none</span></td>
+      th:if="${vet.nrOfSpecialties == 0}">Medicina general</span></td>
   </tr>
   </tbody>
 </table>
 
 <div th:if="${totalPages > 1}">
-  <span>Pages:</span>
+  <span>Página:</span>
   <span>[</span>
   <span th:each="i: ${#numbers.sequence(1, totalPages)}">
       <a th:if="${currentPage != i}" th:href="@{'/vets.html/?page=' + ${i}}">[[${i}]]</a>
